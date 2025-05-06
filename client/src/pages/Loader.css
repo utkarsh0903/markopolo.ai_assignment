@@ -1,0 +1,45 @@
+.loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 260px;
+    margin: 2rem auto;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.4s ease-in-out;
+  }
+  
+  .spinner {
+    width: 30px;
+    height: 30px;
+    border: 4px solid #cce7f6;
+    border-top: 4px solid #0a587c; /* sky-blue primary */
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+  
+  .loading-message {
+    margin-top: 12px;
+    font-size: 15px;
+    font-family: 'Segoe UI', sans-serif;
+    color: #5a6c7c;
+    font-weight: 500;
+  }
+  
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0.96);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
