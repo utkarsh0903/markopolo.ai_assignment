@@ -1,5 +1,4 @@
 import { useState, useEffect, useCallback } from "react";
-import axios from "axios";
 import { getUsers } from "../services/userService";
 
 export default function usePaginatedUsers() {
@@ -13,8 +12,8 @@ export default function usePaginatedUsers() {
     setLoading(true);
     try {
       const res = await getUsers(page, 50);
-      if (res.data.data.length > 0) {
-        setUsers(prev => [...prev, ...res.data.data]);
+      if (res.length > 0) {
+        setUsers(prev => [...prev, ...res]);
         setPage(prev => prev + 1);
       } else {
         setHasMoreUsers(false);
